@@ -48,12 +48,12 @@ class QueueRetryCommand extends BaseCommand implements CommandInterface
         // Пока что просто выводим сообщение
         if ($id) {
             $this->info("Retrying job {$id} from queue '{$queue}'...");
-            $this->warning("Not implemented yet.");
+            $this->warning('Not implemented yet.');
         } elseif ($all) {
             $this->info("Retrying all failed jobs from queue '{$queue}'...");
-            $this->warning("Not implemented yet.");
+            $this->warning('Not implemented yet.');
         } else {
-            $this->error("Please specify --id or --all option.");
+            $this->error('Please specify --id or --all option.');
             return 1;
         }
 

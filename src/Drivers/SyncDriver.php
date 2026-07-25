@@ -6,7 +6,6 @@ namespace Architect\Queue\Drivers;
 
 use Architect\Queue\Contracts\JobInterface;
 use Architect\Queue\Contracts\QueueDriverInterface;
-use InvalidArgumentException;
 
 /**
  * Синхронный драйвер очереди.

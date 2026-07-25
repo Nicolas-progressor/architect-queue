@@ -7,7 +7,6 @@ namespace Architect\Queue\Drivers;
 use Architect\Queue\Contracts\JobInterface;
 use Architect\Queue\Contracts\QueueDriverInterface;
 use Axiom\Orm\Orm;
-use InvalidArgumentException;
 use RuntimeException;
 
 /**

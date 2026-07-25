@@ -6,17 +6,17 @@ namespace Architect\Queue\Providers;
 
 use Architect\Contracts\ServiceProviderInterface;
 use Architect\Core\Contracts\ContainerInterface;
-use Architect\Queue\QueueManager;
-use Architect\Queue\Support\DriverFactory;
-use Architect\Queue\Dispatcher;
-use Architect\Queue\Worker;
 use Architect\Queue\Contracts\FailedJobRepositoryInterface;
-use Architect\Queue\Repositories\DatabaseFailedJobRepository;
+use Architect\Queue\Dispatcher;
 use Architect\Queue\Events\EventDispatcherInterface;
 use Architect\Queue\Events\SimpleEventDispatcher;
-use Architect\Queue\Middleware\MiddlewarePipeline;
-use Architect\Queue\Middleware\LoggingMiddleware;
 use Architect\Queue\Middleware\DatabaseTransactionMiddleware;
+use Architect\Queue\Middleware\LoggingMiddleware;
+use Architect\Queue\Middleware\MiddlewarePipeline;
+use Architect\Queue\QueueManager;
+use Architect\Queue\Repositories\DatabaseFailedJobRepository;
+use Architect\Queue\Support\DriverFactory;
+use Architect\Queue\Worker;
 
 /**
  * Сервис-провайдер для системы очередей.

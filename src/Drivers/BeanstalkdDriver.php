@@ -6,8 +6,8 @@ namespace Architect\Queue\Drivers;
 
 use Architect\Queue\Contracts\JobInterface;
 use Architect\Queue\Contracts\QueueDriverInterface;
-use Pheanstalk\Pheanstalk;
 use Pheanstalk\Contract\PheanstalkInterface;
+use Pheanstalk\Pheanstalk;
 use RuntimeException;
 
 /**
@@ -46,7 +46,7 @@ class BeanstalkdDriver implements QueueDriverInterface
         try {
             $this->client = Pheanstalk::create($host, $port, $timeout);
         } catch (\Exception $e) {
-            throw new RuntimeException("Beanstalkd connection failed: " . $e->getMessage(), 0, $e);
+            throw new RuntimeException('Beanstalkd connection failed: ' . $e->getMessage(), 0, $e);
         }
     }
 

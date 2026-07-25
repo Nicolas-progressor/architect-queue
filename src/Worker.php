@@ -10,14 +10,13 @@ use Architect\Queue\Contracts\QueueDriverInterface;
 use Architect\Queue\Contracts\QueueManagerInterface;
 use Architect\Queue\Contracts\WorkerInterface;
 use Architect\Queue\Events\EventDispatcherInterface;
-use Architect\Queue\Events\JobProcessing;
-use Architect\Queue\Events\JobProcessed;
 use Architect\Queue\Events\JobFailed;
+use Architect\Queue\Events\JobProcessed;
+use Architect\Queue\Events\JobProcessing;
 use Architect\Queue\Events\JobRetrying;
 use Architect\Queue\Middleware\MiddlewarePipeline;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
-use RuntimeException;
 
 /**
  * Воркер для обработки задач из очереди.
@@ -226,7 +225,7 @@ class Worker implements WorkerInterface
             $this->failedJobRepository->store($connection, $queue, $job, $exception);
             $this->log('info', "Job {$job->getId()} stored in failed jobs repository.");
         } catch (\Throwable $e) {
-            $this->log('error', "Failed to store failed job: " . $e->getMessage());
+            $this->log('error', 'Failed to store failed job: ' . $e->getMessage());
         }
     }
 

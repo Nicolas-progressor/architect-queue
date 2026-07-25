@@ -34,8 +34,14 @@ class QueueWorkCommand extends BaseCommand implements CommandInterface
             public function stop(): void {}
             public function pause(int $seconds): void {}
             public function resume(): void {}
-            public function status(): array { return []; }
-            public function processNextJob(string $queue = 'default'): bool { return false; }
+            public function status(): array
+            {
+                return [];
+            }
+            public function processNextJob(string $queue = 'default'): bool
+            {
+                return false;
+            }
         };
     }
 
@@ -69,7 +75,7 @@ class QueueWorkCommand extends BaseCommand implements CommandInterface
         }
 
         $driver = $this->queueManager->driver($connection);
-        $this->info("Driver: " . get_class($driver));
+        $this->info('Driver: ' . get_class($driver));
 
         $processed = 0;
         $startTime = time();
@@ -82,19 +88,19 @@ class QueueWorkCommand extends BaseCommand implements CommandInterface
             }
 
             if ($this->exceededMemoryLimit($memoryLimit)) {
-                $this->warning("Memory limit exceeded. Stopping.");
+                $this->warning('Memory limit exceeded. Stopping.');
                 break;
             }
 
             if ($this->exceededTimeLimit($startTime, $timeout)) {
-                $this->warning("Time limit exceeded. Stopping.");
+                $this->warning('Time limit exceeded. Stopping.');
                 break;
             }
 
             $job = $driver->pop($queue);
             if ($job === null) {
                 if ($stopOnEmpty) {
-                    $this->info("Queue is empty. Stopping.");
+                    $this->info('Queue is empty. Stopping.');
                     break;
                 }
                 $this->debug("No jobs available. Sleeping for {$sleep} seconds.");
@@ -102,13 +108,13 @@ class QueueWorkCommand extends BaseCommand implements CommandInterface
                 continue;
             }
 
-            $this->info("Processing job: " . $job->getId());
+            $this->info('Processing job: ' . $job->getId());
             try {
                 $job->handle();
                 $driver->acknowledge($job, $queue);
-                $this->success("Job processed successfully.");
+                $this->success('Job processed successfully.');
             } catch (\Throwable $e) {
-                $this->error("Job failed: " . $e->getMessage());
+                $this->error('Job failed: ' . $e->getMessage());
                 $driver->fail($job, $queue);
             }
 

@@ -56,7 +56,7 @@ class RedisDriver implements QueueDriverInterface
                 $this->redis->select($database);
             }
         } catch (RedisException $e) {
-            throw new RuntimeException("Redis connection failed: " . $e->getMessage(), 0, $e);
+            throw new RuntimeException('Redis connection failed: ' . $e->getMessage(), 0, $e);
         }
     }
 

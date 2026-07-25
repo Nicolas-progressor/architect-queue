@@ -5,7 +5,6 @@ namespace Architect\Queue\Repositories;
 use Architect\Queue\Contracts\FailedJobRepositoryInterface;
 use Architect\Queue\Jobs\JobInterface;
 use Axiom\Orm\Connection\ConnectionInterface;
-use Axiom\Orm\Query\QueryBuilder;
 
 class DatabaseFailedJobRepository implements FailedJobRepositoryInterface
 {

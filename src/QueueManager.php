@@ -36,7 +36,7 @@ class QueueManager implements QueueManagerInterface
 
     public function driver(?string $connection = null): QueueDriverInterface
     {
-        $connection = $connection ?? $this->defaultConnection;
+        $connection ??= $this->defaultConnection;
 
         if (!isset($this->connections[$connection])) {
             throw new InvalidArgumentException("Queue connection [{$connection}] is not defined.");

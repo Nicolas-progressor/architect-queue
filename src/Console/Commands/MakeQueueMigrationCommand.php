@@ -67,7 +67,7 @@ class MakeQueueMigrationCommand extends BaseCommand implements CommandInterface
         if ($customPath !== null) {
             $path = getcwd() . '/' . ltrim($customPath, '/');
             if (!is_dir($path)) {
-                mkdir($path, 0755, true);
+                mkdir($path, 0o755, true);
             }
             return $path;
         }
@@ -87,7 +87,7 @@ class MakeQueueMigrationCommand extends BaseCommand implements CommandInterface
         // Если не найдено, создаём в текущей рабочей директории
         $defaultPath = getcwd() . '/migrations';
         if (!is_dir($defaultPath)) {
-            mkdir($defaultPath, 0755, true);
+            mkdir($defaultPath, 0o755, true);
         }
         return $defaultPath;
     }
@@ -135,41 +135,41 @@ class MakeQueueMigrationCommand extends BaseCommand implements CommandInterface
     private function queueJobsMigration(string $className): string
     {
         return <<<PHP
-<?php
+            <?php
 
-declare(strict_types=1);
+            declare(strict_types=1);
 
-use Axiom\Migration\Migration;
-use Axiom\Migration\Blueprint;
+            use Axiom\Migration\Migration;
+            use Axiom\Migration\Blueprint;
 
-class {$className} extends Migration
-{
-    /**
-     * Run the migration
-     */
-    public function up(): void
-    {
-        \$this->create('queue_jobs', function (Blueprint \$table) {
-            \$table->id();
-            \$table->string('queue')->index();
-            \$table->longText('payload');
-            \$table->unsignedTinyInteger('attempts')->default(0);
-            \$table->unsignedInteger('reserved_at')->nullable();
-            \$table->unsignedInteger('available_at');
-            \$table->unsignedInteger('created_at');
-            \$table->index(['queue', 'reserved_at']);
-        });
-    }
+            class {$className} extends Migration
+            {
+                /**
+                 * Run the migration
+                 */
+                public function up(): void
+                {
+                    \$this->create('queue_jobs', function (Blueprint \$table) {
+                        \$table->id();
+                        \$table->string('queue')->index();
+                        \$table->longText('payload');
+                        \$table->unsignedTinyInteger('attempts')->default(0);
+                        \$table->unsignedInteger('reserved_at')->nullable();
+                        \$table->unsignedInteger('available_at');
+                        \$table->unsignedInteger('created_at');
+                        \$table->index(['queue', 'reserved_at']);
+                    });
+                }
 
-    /**
-     * Reverse the migration
-     */
-    public function down(): void
-    {
-        \$this->drop('queue_jobs');
-    }
-}
-PHP;
+                /**
+                 * Reverse the migration
+                 */
+                public function down(): void
+                {
+                    \$this->drop('queue_jobs');
+                }
+            }
+            PHP;
     }
 
     /**
@@ -178,39 +178,39 @@ PHP;
     private function failedJobsMigration(string $className): string
     {
         return <<<PHP
-<?php
+            <?php
 
-declare(strict_types=1);
+            declare(strict_types=1);
 
-use Axiom\Migration\Migration;
-use Axiom\Migration\Blueprint;
+            use Axiom\Migration\Migration;
+            use Axiom\Migration\Blueprint;
 
-class {$className} extends Migration
-{
-    /**
-     * Run the migration
-     */
-    public function up(): void
-    {
-        \$this->create('failed_jobs', function (Blueprint \$table) {
-            \$table->id();
-            \$table->string('queue');
-            \$table->longText('payload');
-            \$table->longText('exception');
-            \$table->unsignedInteger('failed_at');
-            \$table->index(['queue']);
-        });
-    }
+            class {$className} extends Migration
+            {
+                /**
+                 * Run the migration
+                 */
+                public function up(): void
+                {
+                    \$this->create('failed_jobs', function (Blueprint \$table) {
+                        \$table->id();
+                        \$table->string('queue');
+                        \$table->longText('payload');
+                        \$table->longText('exception');
+                        \$table->unsignedInteger('failed_at');
+                        \$table->index(['queue']);
+                    });
+                }
 
-    /**
-     * Reverse the migration
-     */
-    public function down(): void
-    {
-        \$this->drop('failed_jobs');
-    }
-}
-PHP;
+                /**
+                 * Reverse the migration
+                 */
+                public function down(): void
+                {
+                    \$this->drop('failed_jobs');
+                }
+            }
+            PHP;
     }
 
     /**

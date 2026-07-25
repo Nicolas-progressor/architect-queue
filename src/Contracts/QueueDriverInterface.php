@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Architect\Queue\Contracts;
 
-use Architect\Queue\Contracts\JobInterface;
-
 /**
  * Интерфейс драйвера очереди.
  * Определяет методы для взаимодействия с бэкендом очереди.

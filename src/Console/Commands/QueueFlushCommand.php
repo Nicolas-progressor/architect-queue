@@ -50,9 +50,9 @@ class QueueFlushCommand extends BaseCommand implements CommandInterface
 
         if (!$force) {
             $this->warning("This will delete {$count} jobs from queue '{$queue}'.");
-            $confirm = $this->ask("Are you sure? (yes/no)", 'no');
+            $confirm = $this->ask('Are you sure? (yes/no)', 'no');
             if (strtolower($confirm) !== 'yes') {
-                $this->info("Aborted.");
+                $this->info('Aborted.');
                 return 0;
             }
         }

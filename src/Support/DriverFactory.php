@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Architect\Queue\Support;
 
 use Architect\Queue\Contracts\QueueDriverInterface;
-use Architect\Queue\Drivers\SyncDriver;
 use Architect\Queue\Drivers\DatabaseDriver;
 use Architect\Queue\Drivers\RedisDriver;
+use Architect\Queue\Drivers\SyncDriver;
 use InvalidArgumentException;
 use Psr\Container\ContainerInterface;
 

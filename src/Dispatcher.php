@@ -7,7 +7,6 @@ namespace Architect\Queue;
 use Architect\Queue\Contracts\DispatcherInterface;
 use Architect\Queue\Contracts\JobInterface;
 use Architect\Queue\Contracts\QueueManagerInterface;
-use Architect\Queue\Jobs\Job;
 use InvalidArgumentException;
 use Psr\Container\ContainerInterface;
 

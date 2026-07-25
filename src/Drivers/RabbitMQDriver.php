@@ -57,7 +57,7 @@ class RabbitMQDriver implements QueueDriverInterface
             $this->connection = new AMQPStreamConnection($host, $port, $user, $password, $vhost);
             $this->channel = $this->connection->channel();
         } catch (\Exception $e) {
-            throw new RuntimeException("RabbitMQ connection failed: " . $e->getMessage(), 0, $e);
+            throw new RuntimeException('RabbitMQ connection failed: ' . $e->getMessage(), 0, $e);
         }
     }
 

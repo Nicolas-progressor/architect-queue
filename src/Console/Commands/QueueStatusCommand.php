@@ -40,16 +40,16 @@ class QueueStatusCommand extends BaseCommand implements CommandInterface
 
         $driver = $this->queueManager->driver($connection);
 
-        $this->info("Queue Status");
-        $this->line("Connection: " . ($connection ?? 'default'));
+        $this->info('Queue Status');
+        $this->line('Connection: ' . ($connection ?? 'default'));
         $this->line("Queue: {$queue}");
-        $this->line("Driver: " . get_class($driver));
+        $this->line('Driver: ' . get_class($driver));
 
         $count = $driver->count($queue);
         $this->line("Pending jobs: {$count}");
 
         $queues = $driver->listQueues();
-        $this->line("Available queues: " . implode(', ', $queues));
+        $this->line('Available queues: ' . implode(', ', $queues));
 
         return 0;
     }
