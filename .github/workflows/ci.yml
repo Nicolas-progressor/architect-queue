@@ -2,9 +2,12 @@ name: CI
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
+    branches: [main]
+
+env:
+  COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ github.token }}"}}'
 
 jobs:
   lint:
@@ -27,24 +30,19 @@ jobs:
         with:
           php-version: '8.2'
           tools: phpstan
-      - run: composer install --no-progress --no-interaction
+      - run: composer install --no-progress --no-interaction --no-scripts
       - run: vendor/bin/phpstan analyse
 
   test:
     name: PHPUnit
     runs-on: ubuntu-latest
-    services:
-      redis:
-        image: redis:7
-        ports: ['6379:6379']
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           coverage: xdebug
-          extensions: redis
-      - run: composer install --no-progress --no-interaction
+      - run: composer install --no-progress --no-interaction --no-scripts
       - run: vendor/bin/phpunit --coverage-clover=coverage.xml
       - uses: codecov/codecov-action@v4
         if: always()
@@ -60,5 +58,5 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-      - run: composer install --no-progress --no-interaction
+      - run: composer install --no-progress --no-interaction --no-scripts
       - run: composer audit
