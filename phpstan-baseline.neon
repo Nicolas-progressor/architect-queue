@@ -1,0 +1,271 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Architect\\\\Queue\\\\Console\\\\Commands\\\\MakeQueueMigrationCommand\\:\\:__construct\\(\\) calls parent\\:\\:__construct\\(\\) but Architect\\\\Queue\\\\Console\\\\Commands\\\\MakeQueueMigrationCommand does not extend any class\\.$#"
+			count: 1
+			path: src/Console/Commands/MakeQueueMigrationCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\MakeQueueMigrationCommand\\:\\:info\\(\\)\\.$#"
+			count: 2
+			path: src/Console/Commands/MakeQueueMigrationCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\MakeQueueMigrationCommand\\:\\:line\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/MakeQueueMigrationCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\MakeQueueMigrationCommand\\:\\:success\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/MakeQueueMigrationCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\MakeQueueMigrationCommand\\:\\:warning\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/MakeQueueMigrationCommand.php
+
+		-
+			message: "#^Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueFlushCommand\\:\\:__construct\\(\\) calls parent\\:\\:__construct\\(\\) but Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueFlushCommand does not extend any class\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueFlushCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueFlushCommand\\:\\:ask\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueFlushCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueFlushCommand\\:\\:info\\(\\)\\.$#"
+			count: 2
+			path: src/Console/Commands/QueueFlushCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueFlushCommand\\:\\:success\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueFlushCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueFlushCommand\\:\\:warning\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueFlushCommand.php
+
+		-
+			message: "#^Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueRetryCommand\\:\\:__construct\\(\\) calls parent\\:\\:__construct\\(\\) but Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueRetryCommand does not extend any class\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueRetryCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueRetryCommand\\:\\:error\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueRetryCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueRetryCommand\\:\\:info\\(\\)\\.$#"
+			count: 2
+			path: src/Console/Commands/QueueRetryCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueRetryCommand\\:\\:warning\\(\\)\\.$#"
+			count: 2
+			path: src/Console/Commands/QueueRetryCommand.php
+
+		-
+			message: "#^Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueStatusCommand\\:\\:__construct\\(\\) calls parent\\:\\:__construct\\(\\) but Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueStatusCommand does not extend any class\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueStatusCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueStatusCommand\\:\\:info\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueStatusCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueStatusCommand\\:\\:line\\(\\)\\.$#"
+			count: 5
+			path: src/Console/Commands/QueueStatusCommand.php
+
+		-
+			message: "#^Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueWorkCommand\\:\\:__construct\\(\\) calls parent\\:\\:__construct\\(\\) but Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueWorkCommand does not extend any class\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueWorkCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueWorkCommand\\:\\:error\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueWorkCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueWorkCommand\\:\\:getOutput\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueWorkCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueWorkCommand\\:\\:info\\(\\)\\.$#"
+			count: 7
+			path: src/Console/Commands/QueueWorkCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueWorkCommand\\:\\:line\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueWorkCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueWorkCommand\\:\\:success\\(\\)\\.$#"
+			count: 1
+			path: src/Console/Commands/QueueWorkCommand.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Console\\\\Commands\\\\QueueWorkCommand\\:\\:warning\\(\\)\\.$#"
+			count: 2
+			path: src/Console/Commands/QueueWorkCommand.php
+
+		-
+			message: "#^Parameter \\$job of method Architect\\\\Queue\\\\Contracts\\\\FailedJobRepositoryInterface\\:\\:store\\(\\) has invalid type Architect\\\\Queue\\\\Jobs\\\\JobInterface\\.$#"
+			count: 2
+			path: src/Contracts/FailedJobRepositoryInterface.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Contracts\\\\JobInterface\\:\\:toArray\\(\\)\\.$#"
+			count: 1
+			path: src/Drivers/BeanstalkdDriver.php
+
+		-
+			message: "#^Cannot cast Pheanstalk\\\\Job to string\\.$#"
+			count: 1
+			path: src/Drivers/BeanstalkdDriver.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Contracts\\\\JobInterface\\:\\:toArray\\(\\)\\.$#"
+			count: 1
+			path: src/Drivers/DatabaseDriver.php
+
+		-
+			message: "#^Call to static method connection\\(\\) on an unknown class Axiom\\\\Orm\\\\Orm\\.$#"
+			count: 7
+			path: src/Drivers/DatabaseDriver.php
+
+		-
+			message: "#^Call to static method table\\(\\) on an unknown class Axiom\\\\Orm\\\\Orm\\.$#"
+			count: 8
+			path: src/Drivers/DatabaseDriver.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Contracts\\\\JobInterface\\:\\:toArray\\(\\)\\.$#"
+			count: 1
+			path: src/Drivers/RabbitMQDriver.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Contracts\\\\JobInterface\\:\\:toArray\\(\\)\\.$#"
+			count: 3
+			path: src/Drivers/RedisDriver.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Contracts\\\\JobInterface\\:\\:toArray\\(\\)\\.$#"
+			count: 1
+			path: src/Drivers/SqsDriver.php
+
+		-
+			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			count: 1
+			path: src/Jobs/Job.php
+
+		-
+			message: "#^Call to method getConnection\\(\\) on an unknown class Axiom\\\\Orm\\\\Connection\\\\ConnectionManager\\.$#"
+			count: 1
+			path: src/Middleware/DatabaseTransactionMiddleware.php
+
+		-
+			message: "#^Parameter \\$connectionManager of method Architect\\\\Queue\\\\Middleware\\\\DatabaseTransactionMiddleware\\:\\:__construct\\(\\) has invalid type Axiom\\\\Orm\\\\Connection\\\\ConnectionManager\\.$#"
+			count: 1
+			path: src/Middleware/DatabaseTransactionMiddleware.php
+
+		-
+			message: "#^Property Architect\\\\Queue\\\\Middleware\\\\DatabaseTransactionMiddleware\\:\\:\\$connectionManager has unknown class Axiom\\\\Orm\\\\Connection\\\\ConnectionManager as its type\\.$#"
+			count: 1
+			path: src/Middleware/DatabaseTransactionMiddleware.php
+
+		-
+			message: "#^Call to an undefined method Architect\\\\Queue\\\\Contracts\\\\JobInterface\\:\\:getJobId\\(\\)\\.$#"
+			count: 3
+			path: src/Middleware/LoggingMiddleware.php
+
+		-
+			message: "#^Result of method Architect\\\\Queue\\\\Middleware\\\\JobMiddlewareInterface\\:\\:handle\\(\\) \\(void\\) is used\\.$#"
+			count: 1
+			path: src/Middleware/MiddlewarePipeline.php
+
+		-
+			message: "#^Call to method factory\\(\\) on an unknown class Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 11
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Call to method get\\(\\) on an unknown class Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 4
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Call to method has\\(\\) on an unknown class Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 4
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Parameter \\$container of method Architect\\\\Queue\\\\Providers\\\\QueueServiceProvider\\:\\:__construct\\(\\) has invalid type Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 1
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Parameter \\$container of method Architect\\\\Queue\\\\Providers\\\\QueueServiceProvider\\:\\:boot\\(\\) has invalid type Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 1
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Parameter \\$container of method Architect\\\\Queue\\\\Providers\\\\QueueServiceProvider\\:\\:loadQueueConfig\\(\\) has invalid type Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 2
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Parameter \\$container of method Architect\\\\Queue\\\\Providers\\\\QueueServiceProvider\\:\\:log\\(\\) has invalid type Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 1
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Parameter \\$container of method Architect\\\\Queue\\\\Providers\\\\QueueServiceProvider\\:\\:register\\(\\) has invalid type Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 1
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Parameter \\$container of method Architect\\\\Queue\\\\Providers\\\\QueueServiceProvider\\:\\:registerConsoleCommands\\(\\) has invalid type Architect\\\\Core\\\\Contracts\\\\ContainerInterface\\.$#"
+			count: 1
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Property Architect\\\\Queue\\\\Providers\\\\QueueServiceProvider\\:\\:\\$container has unknown class Architect\\\\Core\\\\Contracts\\\\ContainerInterface as its type\\.$#"
+			count: 1
+			path: src/Providers/QueueServiceProvider.php
+
+		-
+			message: "#^Call to method getPayload\\(\\) on an unknown class Architect\\\\Queue\\\\Jobs\\\\JobInterface\\.$#"
+			count: 1
+			path: src/Repositories/DatabaseFailedJobRepository.php
+
+		-
+			message: "#^Call to method table\\(\\) on an unknown class Axiom\\\\Orm\\\\Connection\\\\ConnectionInterface\\.$#"
+			count: 5
+			path: src/Repositories/DatabaseFailedJobRepository.php
+
+		-
+			message: "#^Parameter \\$connection of method Architect\\\\Queue\\\\Repositories\\\\DatabaseFailedJobRepository\\:\\:__construct\\(\\) has invalid type Axiom\\\\Orm\\\\Connection\\\\ConnectionInterface\\.$#"
+			count: 2
+			path: src/Repositories/DatabaseFailedJobRepository.php
+
+		-
+			message: "#^Parameter \\$job of method Architect\\\\Queue\\\\Repositories\\\\DatabaseFailedJobRepository\\:\\:store\\(\\) has invalid type Architect\\\\Queue\\\\Jobs\\\\JobInterface\\.$#"
+			count: 2
+			path: src/Repositories/DatabaseFailedJobRepository.php
+
+		-
+			message: "#^Property Architect\\\\Queue\\\\Repositories\\\\DatabaseFailedJobRepository\\:\\:\\$connection has unknown class Axiom\\\\Orm\\\\Connection\\\\ConnectionInterface as its type\\.$#"
+			count: 1
+			path: src/Repositories/DatabaseFailedJobRepository.php

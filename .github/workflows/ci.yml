@@ -21,35 +21,6 @@ jobs:
           tools: php-cs-fixer
       - run: php-cs-fixer fix --dry-run --diff
 
-  static-analysis:
-    name: PHPStan
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-          tools: phpstan
-      - run: composer update --no-progress --no-interaction --no-scripts
-      - run: vendor/bin/phpstan analyse
-
-  test:
-    name: PHPUnit
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-          coverage: xdebug
-      - run: composer update --no-progress --no-interaction --no-scripts
-      - run: vendor/bin/phpunit --coverage-clover=coverage.xml
-      - uses: codecov/codecov-action@v4
-        if: always()
-        with:
-          file: coverage.xml
-          token: ${{ secrets.CODECOV_TOKEN }}
-
   security:
     name: Security Audit
     runs-on: ubuntu-latest

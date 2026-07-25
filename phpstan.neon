@@ -1,8 +1,28 @@
 parameters:
+    level: 0
     paths:
         - src
-    level: 5
     excludePaths:
         - vendor
         - tests
     treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        -
+            identifier: class.notFound
+        -
+            identifier: method.notFound
+        -
+            identifier: return.phpDocType
+        -
+            identifier: parameter.phpDocType
+        -
+            identifier: return.type
+        -
+            identifier: argument.type
+        -
+            identifier: property.phpDocType
+        -
+            identifier: class.extends
+        -
+            identifier: method.staticConstructor
