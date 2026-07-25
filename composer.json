@@ -1,0 +1,55 @@
+{
+    "name": "architect/queue",
+    "description": "Queue system for Architect Framework (similar to Laravel Horizon / Symfony Messenger)",
+    "type": "architect-package",
+    "license": "MIT",
+    "keywords": [
+        "queue",
+        "job",
+        "worker",
+        "messaging",
+        "architect",
+        "framework"
+    ],
+    "homepage": "https://github.com/architect/queue",
+    "authors": [{
+        "name": "Architect Team",
+        "email": "team@architect.dev"
+    }],
+    "require": {
+        "php": ">=8.2",
+        "architect/framework": "*@dev",
+        "psr/container": "^2.0",
+        "psr/log": "^1.1",
+        "ext-redis": "*",
+        "pda/pheanstalk": "^4.0",
+        "aws/aws-sdk-php": "^3.0",
+        "php-amqplib/php-amqplib": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Architect\\Queue\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Architect\\Queue\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "architect": {
+            "providers": [
+                "Architect\\Queue\\Providers\\QueueServiceProvider"
+            ]
+        }
+    }
+}
