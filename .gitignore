@@ -3,3 +3,9 @@ composer.lock
 .phpunit.result.cache
 .phpstan.cache
 coverage.xml
+
+# CI/CD
+.php-cs-fixer.cache
+.phpstan.cache
+.phpunit.result.cache
+coverage.xml
