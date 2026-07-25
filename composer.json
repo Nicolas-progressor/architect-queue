@@ -11,14 +11,14 @@
         "architect",
         "framework"
     ],
-    "homepage": "https://github.com/architect/queue",
+    "homepage": "https://github.com/Nicolas-progressor/architect-queue",
     "authors": [{
         "name": "Architect Team",
         "email": "team@architect.dev"
     }],
     "require": {
         "php": ">=8.2",
-        "architect/framework": "*@dev",
+        "architect/contracts": "*@dev",
         "psr/container": "^2.0",
         "psr/log": "^1.1",
         "ext-redis": "*",
@@ -27,8 +27,16 @@
         "php-amqplib/php-amqplib": "^3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.0"
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.10",
+        "friendsofphp/php-cs-fixer": "^3.65"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Nicolas-progressor/architect-contracts"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Architect\\Queue\\": "src/"
